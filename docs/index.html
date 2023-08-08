@@ -71,18 +71,30 @@
               divEle.style =
                 "width: " + main.clientWidth + "px; margin: 0 auto 20px;";
               domObj.appendTo(domObj.find(".content"), divEle);
-              gitalk = new Gitalk(
-                Object.assign(gitalkConfig, { id: !label ? "home" : label })
-              );
-              gitalk.render("gitalk-container-" + label);
+              // gitalk = new Gitalk(
+              //   Object.assign(gitalkConfig, { id: !label ? "home" : label })
+              // );
+              // gitalk.render("gitalk-container-" + label);
             });
           },
         ],
       };
     </script>
 
-    <link rel="stylesheet" href="/docs/assets/css/vue.css" />
+    <link rel="stylesheet" href="/assets/css/vue.css" />
+    <link rel="stylesheet" href="/assets/css/gitalk.css" />
+    <script src="/assets/js/md5.js"></script>
+    <script src="/assets/js/docsify.min.js"></script>
+    <script src="/assets/js/gitalk.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+    <script src="/assets/js/docsify-pagination.min.js"></script>
+    <script src="/assets/js/zoom-image.js"></script>
+    <script src="/assets/js/prism-bash.js"></script>
+    <script src="/assets/js/prism-java.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="/docs/assets/css/vue.css" />
     <link rel="stylesheet" href="/docs/assets/css/gitalk.css" />
+
     <script src="/docs/assets/js/md5.js"></script>
     <script src="/docs/assets/js/docsify.min.js"></script>
     <script src="/docs/assets/js/gitalk.min.js"></script>
@@ -90,6 +102,6 @@
     <script src="/docs/assets/js/docsify-pagination.min.js"></script>
     <script src="/docs/assets/js/zoom-image.js"></script>
     <script src="/docs/assets/js/prism-bash.js"></script>
-    <script src="/docs/assets/js/prism-java.min.js"></script>
+    <script src="/docs/assets/js/prism-java.min.js"></script> -->
   </body>
 </html>
