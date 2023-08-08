@@ -10,15 +10,13 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
 
-    <!-- <script>
-      var _hmt = _hmt || [];
-      (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b3354307876925c625a24bb138d2177c";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
-    </script> -->
+    <link rel="stylesheet" href="/assets/css/vue.css" />
+    <link rel="stylesheet" href="/assets/css/gitalk.css" />
+    <!-- 文件夹样式 -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css"
+    />
   </head>
   <body>
     <div id="app"></div>
@@ -46,6 +44,8 @@
           tocMaxLevel: 2,
           target: "h2, h3, h4, h5, h6",
         },
+        // 导航栏
+        loadNavbar: true,
         subMaxLevel: 2,
         search: {
           paths: "auto",
@@ -58,34 +58,7 @@
           nextText: "NEXT",
           crossChapter: true,
         },
-        plugins: [
-          function (hook, vm) {
-            hook.doneEach(function () {
-              var label, domObj, main, divEle, gitalk;
-              label = md5(decodeURI(vm.route.path.split("/").pop()));
-              domObj = Docsify.dom;
-              main = domObj.getNode("#main");
-
-              Array.apply(
-                null,
-                document.querySelectorAll("div.gitalk-container")
-              ).forEach(function (ele) {
-                ele.remove();
-              });
-
-              divEle = domObj.create("div");
-              divEle.id = "gitalk-container-" + label;
-              divEle.className = "gitalk-container";
-              divEle.style =
-                "width: " + main.clientWidth + "px; margin: 0 auto 20px;";
-              domObj.appendTo(domObj.find(".content"), divEle);
-              gitalk = new Gitalk(
-                Object.assign(gitalkConfig, { id: !label ? "home" : label })
-              );
-              gitalk.render("gitalk-container-" + label);
-            });
-          },
-        ],
+        plugins: [],
         latex: {
           inlineMath: [
             ["$", "$"],
@@ -96,36 +69,6 @@
       };
     </script>
 
-    <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
-    <script>
-      L2Dwidget.init({
-        model: {
-          //jsonpath控制显示那个小萝莉模型，
-          //(切换模型需要改动)
-          jsonPath:
-            "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
-          scale: 1,
-        },
-        display: {
-          position: "right", //看板娘的表现位置
-          width: 70, //小萝莉的宽度
-          height: 140, //小萝莉的高度
-          hOffset: 35,
-          vOffset: -20,
-        },
-        mobile: {
-          show: true,
-          scale: 0.5,
-        },
-        react: {
-          opacityDefault: 0.7,
-          opacityOnHover: 0.2,
-        },
-      });
-    </script>
-
-    <link rel="stylesheet" href="/assets/css/vue.css" />
-    <link rel="stylesheet" href="/assets/css/gitalk.css" />
     <script src="/assets/js/md5.js"></script>
     <script src="/assets/js/docsify.min.js"></script>
     <script src="/assets/js/gitalk.min.js"></script>
@@ -135,15 +78,23 @@
     <script src="/assets/js/prism-bash.js"></script>
     <script src="/assets/js/prism-java.min.js"></script>
 
+    <!-- 代码复制 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
 
+    <!-- 数学公式 -->
     <script src="//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script>
 
-    <!-- 文件夹样式 -->
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css"
-    />
+    <!-- 多tab支持 -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script>
+
+    <!-- 侧边栏目录折叠 -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+
+    <!-- 页面右侧 TOC -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-toc@1.1.0/dist/docsify-plugin-toc.min.js"></script>
+
+    <!-- emoji -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
   </body>
 </html>

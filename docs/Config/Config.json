@@ -1,0 +1,7 @@
+{
+  "HomePath": "E:\\Blog\\docs\\docs",
+  "DisableGenerateReadmeFile": false,
+  "IgnoreFile": ["_coverpage.md", "_navbar.md"],
+  "IgnoreDir": [".git", "assets", "Config", "_media"],
+  "IgnoreDirNameContain": [".assets"]
+}
