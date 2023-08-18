@@ -1,8 +1,6 @@
 
 * [:books:专栏](/专栏/)
 
-* [:fire:项目](/项目/)
-
 * :four_leaf_clover:博客
 
   * [CSDN](https://blog.csdn.net/m0_63748493)
